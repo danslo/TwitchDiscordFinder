@@ -1,0 +1,37 @@
+diff --git a/src/Discord/Discord.php b/src/Discord/Discord.php
+index 5bb881a..98485ca 100644
+--- a/src/Discord/Discord.php
++++ b/src/Discord/Discord.php
+@@ -334,7 +334,7 @@ class Discord
+         $this->on('ready', $function);
+ 
+         $this->http = new Http(
+-            'Bot '.$this->token,
++            ($options['bot'] ? 'Bot ' : '').$this->token,
+             $this->loop,
+             $this->options['logger'],
+             new React($this->loop, $options['socket_options'])
+@@ -1269,6 +1269,7 @@ class Discord
+             ->setAllowedTypes('token', 'string')
+             ->setDefined([
+                 'token',
++                'bot',
+                 'shardId',
+                 'shardCount',
+                 'loop',
+@@ -1283,6 +1284,7 @@ class Discord
+             ])
+             ->setDefaults([
+                 'loop' => LoopFactory::create(),
++                'bot' => true,
+                 'logger' => null,
+                 'loadAllMembers' => false,
+                 'disabledEvents' => [],
+@@ -1293,6 +1295,7 @@ class Discord
+                 'socket_options' => [],
+             ])
+             ->setAllowedTypes('token', 'string')
++            ->setAllowedTypes('bot', 'bool')
+             ->setAllowedTypes('logger', ['null', LoggerInterface::class])
+             ->setAllowedTypes('loop', LoopInterface::class)
+             ->setAllowedTypes('loadAllMembers', ['bool', 'array'])

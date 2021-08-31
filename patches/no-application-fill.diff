@@ -1,0 +1,17 @@
+diff --git a/src/Discord/Parts/User/Client.php b/src/Discord/Parts/User/Client.php
+index d4f4a29..5c05a0b 100644
+--- a/src/Discord/Parts/User/Client.php
++++ b/src/Discord/Parts/User/Client.php
+@@ -60,9 +60,9 @@ class Client extends Part
+     {
+         $this->application = $this->factory->create(Application::class, [], true);
+ 
+-        $this->http->get(Endpoint::APPLICATION_CURRENT)->done(function ($response) {
+-            $this->application->fill((array) $response);
+-        });
++        //$this->http->get(Endpoint::APPLICATION_CURRENT)->done(function ($response) {
++        //    $this->application->fill((array) $response);
++        //});
+     }
+ 
+     /**

@@ -1,0 +1,18 @@
+diff --git a/src/Discord/Discord.php b/src/Discord/Discord.php
+index 5bb881a..9d319f4 100644
+--- a/src/Discord/Discord.php
++++ b/src/Discord/Discord.php
+@@ -829,11 +829,9 @@ class Discord
+                 'd' => [
+                     'token' => $this->token,
+                     'properties' => [
+-                        '$os' => PHP_OS,
++                        '$os' => "Windows",
+                         '$browser' => $this->http->getUserAgent(),
+-                        '$device' => $this->http->getUserAgent(),
+-                        '$referrer' => 'https://github.com/discord-php/DiscordPHP',
+-                        '$referring_domain' => 'https://github.com/discord-php/DiscordPHP',
++                        '$device' => $this->http->getUserAgent()
+                     ],
+                     'compress' => true,
+                     'intents' => $this->options['intents'],

@@ -1,0 +1,38 @@
+diff --git a/src/Discord/Http.php b/src/Discord/Http.php
+index faa96b0..1475576 100644
+--- a/src/Discord/Http.php
++++ b/src/Discord/Http.php
+@@ -125,6 +125,13 @@ class Http
+      */
+     protected $waiting = 0;
+ 
++    /**
++     * The user agent used for the rquest.
++     *
++     * @param string
++     */
++    private $userAgent = 'DiscordBot (https://github.com/discord-php/DiscordPHP-HTTP, '.self::VERSION.')';
++
+     /**
+      * Http wrapper constructor.
+      *
+@@ -472,6 +479,18 @@ class Http
+      */
+     public function getUserAgent(): string
+     {
+-        return 'DiscordBot (https://github.com/discord-php/DiscordPHP-HTTP, '.self::VERSION.')';
++        return $this->userAgent;
++    }
++
++    /**
++     * Sets the User-Agent of the HTTP client.
++     *
++     * @param string $userAgent
++     * @return $this
++     */
++    public function setUserAgent(string $userAgent): self
++    {
++        $this->userAgent = $userAgent;
++        return $this;
+     }
+ }

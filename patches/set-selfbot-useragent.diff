@@ -1,0 +1,15 @@
+diff --git a/src/Discord/Discord.php b/src/Discord/Discord.php
+index 5bb881a..13c17f9 100644
+--- a/src/Discord/Discord.php
++++ b/src/Discord/Discord.php
+@@ -340,6 +340,10 @@ class Discord
+             new React($this->loop, $options['socket_options'])
+         );
+ 
++        if (!$options['bot']) {
++            $this->http->setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36');
++        }
++
+         $this->factory = new Factory($this, $this->http);
+         $this->client = $this->factory->create(Client::class, [], true);
+ 
