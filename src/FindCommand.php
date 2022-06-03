@@ -34,7 +34,7 @@ class FindCommand extends Command
         echo implode(
             PHP_EOL,
             array_map(function($stream) {
-                return $stream->getStreamer() . ' ' . $stream->getViewers();
+                return $stream->getStreamer() . '#' . $stream->getViewers();
             }, $this->streamFinder->find(
                 [],
                 $input->getArgument(self::ARGUMENT_GAME),
