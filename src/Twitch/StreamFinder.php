@@ -24,8 +24,8 @@ class StreamFinder
 
             foreach ($edges as $edge) {
                 $cursor = $edge->cursor;
-                if ($edge->node->viewersCount < $minViewers) {
-                    continue;
+                if ($edge->node->viewersCount === 0 || $edge->node->viewersCount < $minViewers) {
+                    return $streams;
                 }
                 $streams[] = new Stream(
                     $edge->node->title,
@@ -36,7 +36,7 @@ class StreamFinder
                     $edge->node->game->displayName ?? ''
                 );
             }
-        } while (count($edges) === Queries::PAGE_SIZE);
+        } while (true);
 
         return $streams;
     }

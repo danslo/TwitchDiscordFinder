@@ -16,7 +16,7 @@ class Client extends \GraphQL\Client
     public function __construct(
         string $endpointUrl = self::ENDPOINT,
         array $authorizationHeaders = ['Client-Id' => self::CLIENT_ID],
-        array $httpOptions = [/*'proxy' => ['https' => self::PROXY]*/],
+        array $httpOptions = ['proxy' => ['https' => self::PROXY]],
         ClientInterface $httpClient = null,
         string $requestMethod = 'POST',
         AuthInterface $auth = null
