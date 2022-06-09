@@ -1,11 +1,11 @@
-# TDF
+# Twitch Discord Finder
 
 ## What is TDF?
 
 TDF stands for Twitch Discord Finder. It's a discord bot that does the following:
 - Find twitch streams for provided games / tags.
 - Finds the discords associated with those streams.
-- Checks the discords for Open VC and/or channels with TTS enabled. 
+- Checks the discords for Open VC so you can chat with like-minded individuals.
 
 ## Installation
 
@@ -31,9 +31,9 @@ There are two commands, `!discord` and `!game`.
 
 Examples:
 
-- `!discord english depression`
+- `!discord english boardgames`
 - `!discord programming english anime`
-- `!game "The Sims 4" Charity`
+- `!game "The Sims 4" charity`
 - `!game "Dead by Daylight" english "playing with viewers"`
 
 ## Security
@@ -46,12 +46,6 @@ However, Discord websocket communication is a UDP based protocol, so it is not c
 
 ## Disclaimer
 
-Self-bots are against the Discord TOS. The discord libraries are patched to use regular user agents, but there is still a decent chance of getting banned.
+Self-bots are against the Discord TOS. The discord libraries are patched to use regular user agents, but there are no guarantees.
 
 Use at your own risk.
-
-## Author
-
-~Katie
-
-Shout out to PIE DOOR GANG NATION.
